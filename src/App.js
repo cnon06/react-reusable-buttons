@@ -1,23 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import { Button } from "./Button";
+
+const buttonProps = [
+  {
+    backgroundColor: "red",
+    textColor: "#fff",
+    text: "button 1",
+  },
+
+  {
+    backgroundColor: "blue",
+    textColor: "#fff",
+    text: "button 2",
+  },
+
+  {
+    backgroundColor: "yellow",
+    // textColor: "#fff",
+    text: "button 3",
+  },
+
+  {
+    backgroundColor: "pink",
+    // textColor: "#fff",
+    text: "button 4",
+  },
+
+  {
+    backgroundColor: "green",
+    textColor: "#fff",
+    text: "button 5",
+  },
+];
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        paddingTop: "20px",
+      }}
+    >
+      {buttonProps.map((item) => (
+        <Button buttonProps={item}>
+          <em>{item.text}</em>
+        </Button>
+      ))}
     </div>
   );
 }
